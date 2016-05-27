@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "es2015"
+  },
+  "exclude": [
+    "app",
+    "dist",
+    "node_modules"
+  ]
+}

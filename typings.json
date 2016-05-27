@@ -1,0 +1,9 @@
+{
+  "name": "feedly-vue-electron",
+  "version": false,
+  "globalDevDependencies": {
+    "electron": "registry:env/electron#0.37.6+20160416165306",
+    "node": "registry:env/node#4.0.0+20160507210304",
+    "vue": "registry:dt/vue#1.0.21+20160423143248"
+  }
+}

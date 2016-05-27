@@ -1,0 +1,11 @@
+{
+  "name": "feedly-vue-electron",
+  "description": "feed reader",
+  "version": "0.1.0",
+  "author": "egy186",
+  "keywords": [
+    "feed"
+  ],
+  "license": "MIT",
+  "main": "index.js"
+}

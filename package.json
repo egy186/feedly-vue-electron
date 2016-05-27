@@ -1,0 +1,48 @@
+{
+  "name": "feedly-vue-electron",
+  "description": "feed reader",
+  "version": "0.1.0",
+  "author": "egy186",
+  "devDependencies": {
+    "@egy186/eslint-config": "^0.6.1",
+    "babel-cli": "^6.9.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.8.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "copyfiles": "^0.2.1",
+    "cross-conf-env": "^1.0.4",
+    "cross-env": "^1.0.8",
+    "electron-packager": "^7.0.2",
+    "electron-prebuilt": "^1.1.1",
+    "eslint": "^2.10.2",
+    "eslint-plugin-html": "^1.5.1",
+    "node-sass": "^3.7.0",
+    "npm-run-all": "^2.1.1",
+    "pug-cli": "^1.0.0-alpha5",
+    "rimraf": "^2.5.2",
+    "typings": "^1.0.4",
+    "vue": "^1.0.24-csp",
+    "vueify": "^8.4.1"
+  },
+  "keywords": [
+    "feed"
+  ],
+  "license": "MIT",
+  "main": "app/js/index.js",
+  "scripts": {
+    "build": "run-p build:*",
+    "build:html": "pug --out app src",
+    "build:js": "run-p build:js:*",
+    "build:js:main": "babel --out-file app/index.js src/index.js",
+    "build:js:renderer": "cross-env NODE_ENV=production browserify --transform vueify --transform babelify src/renderer/index.js --exclude electron --outfile app/renderer.js",
+    "build:package": "copyfiles --flat src/package.json app",
+    "clean": "rimraf app dist",
+    "lint": "eslint --ext .js,.vue .",
+    "postinstall": "typings install",
+    "prerelease": "npm run build",
+    "prestart": "npm run build",
+    "release": "run-p release:*",
+    "release:win32": "cross-conf-env electron-packager app --platform win32 --arch x64 --app-version $npm_package_version --asar --icon src/icon.ico --out dist --overwrite",
+    "start": "electron app"
+  }
+}
