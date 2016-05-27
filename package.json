@@ -3,6 +3,9 @@
   "description": "feed reader",
   "version": "0.1.0",
   "author": "egy186",
+  "bugs": {
+    "url": "https://github.com/egy186/feedly-vue-electron/issues"
+  },
   "devDependencies": {
     "@egy186/eslint-config": "^0.6.1",
     "babel-cli": "^6.9.0",
@@ -24,11 +27,16 @@
     "vue": "^1.0.24-csp",
     "vueify": "^8.4.1"
   },
+  "homepage": "https://github.com/egy186/feedly-vue-electron#readme",
   "keywords": [
     "feed"
   ],
   "license": "MIT",
   "main": "app/js/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egy186/feedly-vue-electron.git"
+  },
   "scripts": {
     "build": "run-p build:*",
     "build:html": "pug --out app src",
